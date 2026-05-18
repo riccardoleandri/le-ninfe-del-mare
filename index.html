@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1B4F72">
+<title>Le Ninfe del Mare — Guida dell'Ospite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --adriatic:#1B4F72;
+  --adriatic-deep:#0E3552;
+  --adriatic-light:#5B89A8;
+  --azure:#3B7EA1;
+  --whitewash:#FAFCFD;
+  --lime-wash:#F2EEE5;
+  --calce:#F8F4EA;
+  --paper:#FBF8F1;
+  --ivory:#FFFDF7;
+  --sun-gold:#D4A24C;
+  --sun-warm:#E8B968;
+  --terracotta:#C56F47;
+  --olive:#7A8B5C;
+  --ink:#1A2530;
+  --ink-soft:#3A4654;
+  --ink-muted:#7A8693;
+  --border:#E3DDD0;
+  --border-soft:#EFEAE0;
+  --shadow:rgba(14,53,82,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope', -apple-system, sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+  line-height:1.65;
+  font-weight:400;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(27,79,114,0.025) 0%, transparent 45%),
+    radial-gradient(circle at 75% 80%, rgba(212,162,76,0.02) 0%, transparent 45%);
+  mix-blend-mode:multiply;
+}
+
+.lang-menu{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:1000;
+  display:flex;
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:3px;
+  box-shadow:0 6px 24px var(--shadow);
+}
+.lang-btn{
+  background:none;
+  border:none;
+  padding:7px 14px;
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:1.5px;
+  color:var(--ink-muted);
+  cursor:pointer;
+  transition:all 0.3s ease;
+  border-radius:100px;
+}
+.lang-btn.active{
+  background:var(--adriatic);
+  color:var(--whitewash);
+}
+
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg, var(--adriatic), var(--sun-gold), var(--adriatic));
+  z-index:9999;
+}
+
+/* HERO — altezza fissa ragionevole su tutti i dispositivi */
+.hero{
+  position:relative;
+  min-height:640px;
+  max-height:900px;
+  height:100vh;
+  background:
+    linear-gradient(180deg, rgba(27,79,114,0.92) 0%, rgba(14,53,82,0.94) 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><defs><pattern id="w" patternUnits="userSpaceOnUse" width="80" height="80"><path d="M0 40 Q20 30 40 40 T80 40" stroke="rgba(250,252,253,0.08)" fill="none" stroke-width="1"/></pattern></defs><rect width="80" height="80" fill="url(%23w)"/></svg>');
+  color:var(--whitewash);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:90px 28px 60px;
+  overflow:hidden;
+  text-align:center;
+}
+
+.hero-masthead{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  padding:18px 30px 14px;
+  border-bottom:1px solid rgba(250,252,253,0.2);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2.5px;
+  color:rgba(250,252,253,0.7);
+  text-transform:uppercase;
+  font-weight:500;
+}
+.hero-masthead-left{display:flex; gap:14px}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+  max-width:560px;
+  width:100%;
+  animation:heroFadeIn 1.2s ease both;
+}
+@keyframes heroFadeIn{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.hero-issue{
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:5px;
+  color:rgba(250,252,253,0.75);
+  margin-bottom:28px;
+  text-transform:uppercase;
+}
+.hero-issue::before{
+  content:'~';
+  margin-right:14px;
+  color:var(--sun-gold);
+  font-weight:600;
+}
+.hero-issue::after{
+  content:'~';
+  margin-left:14px;
+  color:var(--sun-gold);
+  font-weight:600;
+}
+
+.hero-greet{
+  font-family:'Dancing Script', cursive;
+  font-size:24px;
+  color:var(--sun-gold);
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+}
+.hero-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(48px, 9vw, 72px);
+  line-height:0.95;
+  font-weight:500;
+  margin-bottom:16px;
+  letter-spacing:-0.5px;
+}
+.hero-title em{
+  font-style:italic;
+  color:var(--sun-warm);
+  font-weight:500;
+}
+.hero-subtitle{
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:6px;
+  color:rgba(250,252,253,0.85);
+  margin-bottom:24px;
+  text-transform:uppercase;
+}
+.hero-stamp{
+  display:inline-block;
+  padding:7px 16px;
+  border:1px solid rgba(232,185,104,0.5);
+  border-radius:2px;
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--sun-warm);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:24px;
+}
+.hero-byline{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:18px;
+  color:rgba(250,252,253,0.85);
+  margin-bottom:20px;
+  line-height:1.5;
+  max-width:480px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-location{
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  color:rgba(250,252,253,0.6);
+  text-transform:uppercase;
+  font-weight:500;
+  margin-bottom:30px;
+}
+.hero-specs{
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  padding-top:24px;
+  border-top:1px solid rgba(250,252,253,0.15);
+  flex-wrap:wrap;
+}
+.hero-spec{text-align:center; min-width:60px}
+.hero-spec-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:30px;
+  color:var(--sun-warm);
+  line-height:1;
+  margin-bottom:4px;
+  font-weight:500;
+}
+.hero-spec-label{
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  color:rgba(250,252,253,0.6);
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+main{
+  position:relative;
+  z-index:2;
+}
+
+.section{
+  max-width:680px;
+  margin:0 auto;
+  padding:60px 26px 20px;
+}
+
+.section-tag{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-tag::before{
+  content:'';
+  width:24px;
+  height:1px;
+  background:var(--adriatic);
+}
+
+.section-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:40px;
+  font-weight:500;
+  line-height:1.1;
+  margin-bottom:14px;
+  color:var(--ink);
+  letter-spacing:-0.3px;
+}
+.section-title em{
+  font-style:italic;
+  color:var(--adriatic);
+  font-weight:500;
+}
+
+.section-intro{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:18px;
+  color:var(--ink-soft);
+  margin-bottom:32px;
+  line-height:1.55;
+  max-width:540px;
+}
+
+.letter{
+  background:var(--calce);
+  padding:42px 32px;
+  border-radius:3px;
+  border:1px solid var(--border-soft);
+  position:relative;
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink-soft);
+}
+.letter::before{
+  content:'"';
+  position:absolute;
+  top:-10px;
+  left:24px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:88px;
+  color:var(--sun-gold);
+  line-height:1;
+  font-style:italic;
+  font-weight:500;
+}
+.letter p{margin-bottom:16px}
+.letter-cap{
+  font-family:'Cormorant Garamond', serif;
+  font-size:48px;
+  float:left;
+  line-height:0.9;
+  margin:6px 8px 0 0;
+  color:var(--adriatic);
+  font-weight:500;
+}
+.letter-sign{
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+}
+.letter-sign-name{
+  font-family:'Dancing Script', cursive;
+  font-size:38px;
+  color:var(--adriatic);
+  line-height:0.8;
+  font-weight:600;
+}
+.letter-sign-meta{flex:1; padding-bottom:4px}
+.letter-sign-role{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2.5px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:2px;
+}
+.letter-sign-extra{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:13px;
+  color:var(--ink-muted);
+}
+
+.wifi-card{
+  background:linear-gradient(135deg, var(--adriatic) 0%, var(--adriatic-deep) 100%);
+  color:var(--whitewash);
+  padding:34px 28px;
+  border-radius:3px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(14,53,82,0.18);
+}
+.wifi-card::before{
+  content:'';
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  width:140px;
+  height:140px;
+  background:radial-gradient(circle, rgba(232,185,104,0.18) 0%, transparent 70%);
+  border-radius:50%;
+}
+.wifi-label{
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:rgba(250,252,253,0.6);
+  text-transform:uppercase;
+  margin-bottom:18px;
+  font-weight:500;
+}
+.wifi-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:26px;
+  margin-bottom:24px;
+  font-weight:500;
+  font-style:italic;
+}
+.wifi-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+  border-bottom:1px solid rgba(250,252,253,0.12);
+  gap:12px;
+  flex-wrap:wrap;
+}
+.wifi-row:last-child{border-bottom:none}
+.wifi-row-label{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:rgba(250,252,253,0.65);
+  text-transform:uppercase;
+  font-weight:500;
+}
+.wifi-row-value{
+  font-family:'Cormorant Garamond', serif;
+  font-size:19px;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.copy-btn{
+  background:rgba(232,185,104,0.15);
+  border:1px solid rgba(232,185,104,0.4);
+  color:var(--sun-warm);
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  padding:5px 11px;
+  border-radius:100px;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition:all 0.3s ease;
+  font-weight:600;
+}
+.copy-btn:hover{background:rgba(232,185,104,0.3)}
+.copy-btn.copied{background:var(--sun-gold); color:var(--adriatic-deep); border-color:var(--sun-gold)}
+
+.checkin-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:30px;
+}
+.checkin-card{
+  background:var(--ivory);
+  border:1px solid var(--border);
+  padding:22px 16px;
+  text-align:center;
+  border-radius:3px;
+}
+.checkin-card-label{
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.checkin-card-time{
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px;
+  color:var(--ink);
+  font-weight:500;
+}
+
+.steps{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+.step{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+.step-num{
+  flex-shrink:0;
+  width:34px;
+  height:34px;
+  border:1px solid var(--adriatic);
+  color:var(--adriatic);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;
+  font-weight:600;
+  font-style:italic;
+}
+.step-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px;
+  margin-bottom:4px;
+  color:var(--ink);
+  font-weight:500;
+}
+.step-desc{
+  font-family:'Manrope', sans-serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.6;
+}
+.step-desc strong{color:var(--ink); font-weight:600}
+
+.notice{
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-left:3px solid var(--sun-gold);
+  padding:20px 22px;
+  margin-bottom:14px;
+  border-radius:0 3px 3px 0;
+}
+.notice-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.notice-label svg{width:14px; height:14px}
+.notice-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:19px;
+  color:var(--ink);
+  margin-bottom:6px;
+  font-weight:500;
+}
+.notice-desc{
+  font-family:'Manrope', sans-serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.6;
+}
+.notice-desc strong{color:var(--ink); font-weight:600}
+
+.accordion-item{border-bottom:1px solid var(--border)}
+.accordion-item:first-child{border-top:1px solid var(--border)}
+.accordion-header{
+  width:100%;
+  padding:22px 0;
+  background:none;
+  border:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  text-align:left;
+  font-family:inherit;
+}
+.accordion-header-left{display:flex; align-items:center; gap:18px; flex:1}
+.acc-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  color:var(--sun-gold);
+  font-style:italic;
+  font-weight:600;
+  width:24px;
+  flex-shrink:0;
+}
+.acc-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px;
+  color:var(--ink);
+  margin-bottom:2px;
+  font-weight:500;
+}
+.acc-sub{
+  font-family:'Manrope', sans-serif;
+  font-size:12px;
+  color:var(--ink-muted);
+  font-weight:400;
+}
+.acc-chev{
+  width:18px;
+  height:18px;
+  color:var(--adriatic);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  flex-shrink:0;
+}
+.accordion-item.open .acc-chev{transform:rotate(180deg)}
+.accordion-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.accordion-body-inner{padding:0 0 24px 42px}
+.accordion-body ul{list-style:none}
+.accordion-body li{
+  padding:8px 0 8px 18px;
+  position:relative;
+  font-family:'Manrope', sans-serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.6;
+}
+.accordion-body li::before{
+  content:'•';
+  position:absolute;
+  left:0;
+  color:var(--sun-gold);
+  font-weight:bold;
+}
+.accordion-body strong{color:var(--ink); font-weight:600}
+
+.bookshelf{
+  background:linear-gradient(135deg, var(--lime-wash) 0%, var(--calce) 100%);
+  padding:48px 32px;
+  border-radius:3px;
+  border:1px solid var(--border-soft);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.bookshelf::before{
+  content:'';
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60px;
+  height:1px;
+  background:var(--sun-gold);
+  opacity:0.6;
+}
+.bookshelf-tag{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:14px;
+  margin-top:10px;
+}
+.bookshelf-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:34px;
+  font-weight:500;
+  margin-bottom:18px;
+  color:var(--ink);
+  line-height:1.15;
+}
+.bookshelf-title em{
+  color:var(--adriatic);
+  font-style:italic;
+}
+.bookshelf-desc{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:17px;
+  color:var(--ink-soft);
+  line-height:1.6;
+  max-width:480px;
+  margin:0 auto 22px;
+}
+.bookshelf-quote{
+  font-family:'Dancing Script', cursive;
+  font-size:22px;
+  color:var(--terracotta);
+  font-weight:600;
+  line-height:1.4;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:3px;
+  overflow:hidden;
+}
+@media (min-width:520px){
+  .services-grid{grid-template-columns:repeat(3, 1fr)}
+}
+.service-item{
+  background:var(--ivory);
+  padding:20px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:10px;
+}
+.service-icon{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--adriatic);
+}
+.service-icon svg{width:24px; height:24px}
+.service-name{
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  letter-spacing:0.5px;
+  color:var(--ink);
+  font-weight:500;
+  line-height:1.3;
+}
+
+.places{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.place{
+  background:var(--ivory);
+  border:1px solid var(--border);
+  border-radius:3px;
+  overflow:hidden;
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  transition:all 0.4s ease;
+}
+.place:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px var(--shadow);
+  border-color:var(--adriatic-light);
+}
+.place-img-ph{
+  width:100%;
+  height:170px;
+  background:linear-gradient(135deg, var(--lime-wash), var(--calce));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--adriatic-light);
+  gap:8px;
+}
+.place-img-ph svg{width:48px; height:48px; opacity:0.6}
+.place-img-ph-label{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--adriatic);
+}
+.place-body{padding:22px}
+.place-kicker{
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:2.5px;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.place-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  margin-bottom:8px;
+  color:var(--ink);
+  font-weight:500;
+  line-height:1.15;
+}
+.place-title em{color:var(--adriatic); font-style:italic}
+.place-desc{
+  font-family:'Manrope', sans-serif;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.6;
+  margin-bottom:16px;
+}
+.place-desc strong{color:var(--ink); font-weight:600}
+.place-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+  gap:8px;
+  flex-wrap:wrap;
+}
+.place-distance{
+  font-family:'Manrope', sans-serif;
+  font-size:11px;
+  color:var(--ink-muted);
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.place-distance svg{width:12px; height:12px}
+.place-cta{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.place-cta svg{width:11px; height:11px}
+
+.sapori-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.sapori-item{
+  display:flex;
+  gap:18px;
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  align-items:flex-start;
+}
+.sapori-item:first-child{border-top:1px solid var(--border)}
+.sapori-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:16px;
+  color:var(--sun-gold);
+  font-style:italic;
+  font-weight:600;
+  width:28px;
+  flex-shrink:0;
+  padding-top:2px;
+}
+.sapori-name{
+  font-family:'Cormorant Garamond', serif;
+  font-size:21px;
+  color:var(--ink);
+  margin-bottom:5px;
+  font-weight:500;
+  line-height:1.2;
+}
+.sapori-name em{color:var(--adriatic); font-style:italic}
+.sapori-desc{
+  font-family:'Manrope', sans-serif;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.55;
+}
+.sapori-desc strong{color:var(--ink); font-weight:600}
+
+.emergency-grid{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.emergency-card{
+  background:var(--ivory);
+  border:1px solid var(--border);
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border-radius:3px;
+}
+.emergency-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--adriatic);
+  color:var(--whitewash);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.emergency-icon svg{width:18px;height:18px}
+.emergency-body{flex:1}
+.emergency-label{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:2.5px;
+  color:var(--adriatic);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:3px;
+}
+.emergency-value{
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  color:var(--ink);
+  font-weight:500;
+}
+
+footer{
+  background:var(--adriatic-deep);
+  color:var(--whitewash);
+  padding:60px 26px 110px;
+  text-align:center;
+  position:relative;
+  margin-top:30px;
+}
+.footer-mark{
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px;
+  margin-bottom:6px;
+  font-style:italic;
+  font-weight:500;
+}
+.footer-tag{
+  font-family:'Manrope', sans-serif;
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--sun-gold);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:24px;
+}
+.footer-quote{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:17px;
+  line-height:1.5;
+  color:rgba(250,252,253,0.8);
+  max-width:380px;
+  margin:0 auto 26px;
+}
+.footer-sign{
+  font-family:'Dancing Script', cursive;
+  font-size:36px;
+  color:var(--sun-gold);
+  font-weight:600;
+}
+.footer-luna{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:12px;
+  color:rgba(250,252,253,0.55);
+  margin-top:4px;
+}
+.footer-divider{
+  width:50px;
+  height:1px;
+  background:var(--sun-gold);
+  opacity:0.5;
+  margin:24px auto 14px;
+}
+.footer-powered{
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:rgba(250,252,253,0.45);
+  text-transform:uppercase;
+  font-weight:500;
+}
+.footer-powered strong{color:var(--sun-gold); font-weight:700}
+
+.back-to-top{
+  position:fixed;
+  bottom:80px;
+  right:18px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--adriatic);
+  color:var(--whitewash);
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.4s ease;
+  pointer-events:none;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(14,53,82,0.4);
+}
+.back-to-top.visible{opacity:1; transform:translateY(0); pointer-events:auto}
+.back-to-top svg{width:16px;height:16px}
+
+.powered-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(251,248,241,0.95);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--border);
+  padding:13px 20px;
+  text-align:center;
+  font-family:'Manrope', sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--ink-muted);
+  text-transform:uppercase;
+  font-weight:500;
+  z-index:99;
+}
+.powered-bar strong{color:var(--adriatic); font-weight:700}
+
+.observe-fade{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.observe-fade.visible{opacity:1; transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="lang-menu">
+  <button class="lang-btn active" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('en')" style="display:none">EN</button>
+  <button class="lang-btn" onclick="setLang('es')" style="display:none">ES</button>
+</div>
+
+<section class="hero">
+  <div class="hero-masthead">
+    <div class="hero-masthead-left">
+      <span data-i18n="masthead_left">Polignano a Mare · Puglia</span>
+    </div>
+    <div data-i18n="masthead_right">No. 01 · Edizione Ospite</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-issue" data-i18n="hero_issue">La Vostra Guida</div>
+    <span class="hero-greet" data-i18n="hero_greet">benvenuti a</span>
+    <h1 class="hero-title">Le Ninfe<br>del <em>Mare</em></h1>
+    <div class="hero-subtitle">An Apulian Retreat</div>
+    <div class="hero-stamp" data-i18n="hero_stamp">★ 9,7 / 10 · Posizione</div>
+    <div class="hero-byline" data-i18n="hero_byline">«Una chicca nel cuore di Polignano, a quattro passi dal mare»</div>
+    <div class="hero-location">Piazza Trinità, 16 · Polignano a Mare</div>
+    <div class="hero-specs">
+      <div class="hero-spec"><div class="hero-spec-num">4</div><div class="hero-spec-label" data-i18n="spec_guests">Ospiti</div></div>
+      <div class="hero-spec"><div class="hero-spec-num">2</div><div class="hero-spec-label" data-i18n="spec_room">Camere</div></div>
+      <div class="hero-spec"><div class="hero-spec-num">2</div><div class="hero-spec-label" data-i18n="spec_baths">Bagni</div></div>
+      <div class="hero-spec"><div class="hero-spec-num">2</div><div class="hero-spec-label" data-i18n="spec_beach">Ingressi</div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="section" id="letter">
+  <div class="section-tag" data-i18n="tag_letter">Lettera della host</div>
+  <h2 class="section-title" data-i18n="letter_title">Un saluto da <em>Maria</em></h2>
+  <div class="letter observe-fade">
+    <p><span class="letter-cap">B</span><span data-i18n="letter_p1">envenuti a Le Ninfe del Mare. Sono Maria, e mi occupo personalmente di ogni ospite che arriva nella mia casa. Ci tengo che vi sentiate a casa, fin dal primo momento.</span></p>
+    <p data-i18n="letter_p2">Vi consegno il badge di una chicca nel cuore di Polignano: un alloggio al piano terra con due ingressi, due camere (eventualmente comunicanti), due bagni. Curato in ogni dettaglio, con tutto il necessario per il vostro soggiorno. Il mare è a pochi minuti, i ristoranti e i bar sono nelle vicinanze, e la magia di Lama Monachile vi aspetta dietro l'angolo.</p>
+    <p data-i18n="letter_p3">Nelle prossime pagine trovate tutto: il Wi-Fi, come arrivare, i posti che vi consiglio per mangiare, le calette segrete e i sapori tipici da non perdere. Per qualsiasi cosa, sono qui — un messaggio o una telefonata e vi rispondo subito. Buon soggiorno!</p>
+    <div class="letter-sign">
+      <div class="letter-sign-name">Maria</div>
+      <div class="letter-sign-meta">
+        <div class="letter-sign-role" data-i18n="letter_role">La vostra host</div>
+        <div class="letter-sign-extra" data-i18n="letter_extra">Polignano a Mare, Puglia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="wifi">
+  <div class="section-tag" data-i18n="tag_essentials">Essenziali</div>
+  <h2 class="section-title" data-i18n="wifi_title">Wi-Fi <em>gratuito</em></h2>
+  <p class="section-intro" data-i18n="wifi_intro">Connessione disponibile in tutto l'alloggio. Per restare in contatto con casa, per il lavoro, per la sera in relax dopo una giornata al mare.</p>
+  <div class="wifi-card observe-fade">
+    <div class="wifi-label">Network · Le Ninfe del Mare</div>
+    <div class="wifi-title" data-i18n="wifi_card_title">Connettetevi senza pensieri</div>
+    <div class="wifi-row">
+      <span class="wifi-row-label" data-i18n="wifi_network">Nome rete</span>
+      <span class="wifi-row-value">NinfeDelMare</span>
+    </div>
+    <div class="wifi-row">
+      <span class="wifi-row-label" data-i18n="wifi_password">Password</span>
+      <span class="wifi-row-value" style="font-style:italic; opacity:0.85;">
+        <span data-i18n="wifi_pw_note">Ve la invio al momento del check-in</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="arrivo">
+  <div class="section-tag" data-i18n="tag_arrival">Il vostro arrivo</div>
+  <h2 class="section-title" data-i18n="arrival_title">Come <em>arrivate</em></h2>
+  <p class="section-intro" data-i18n="arrival_intro">L'alloggio si trova in Piazza Trinità, nel cuore di Polignano. Vi accolgo personalmente: avvisatemi appena avete un'idea dell'orario.</p>
+  <div class="checkin-grid observe-fade">
+    <div class="checkin-card">
+      <div class="checkin-card-label">Check-in</div>
+      <div class="checkin-card-time">15:00</div>
+    </div>
+    <div class="checkin-card">
+      <div class="checkin-card-label">Check-out</div>
+      <div class="checkin-card-time">10:00</div>
+    </div>
+  </div>
+  <div class="steps observe-fade">
+    <div class="step">
+      <div class="step-num">i.</div>
+      <div>
+        <div class="step-title" data-i18n="arr1_title">Avvisatemi del vostro orario</div>
+        <div class="step-desc" data-i18n="arr1_desc">Quando avete un'idea di quando arrivate, scrivetemi su <strong>WhatsApp</strong>, su <strong>Booking</strong> o su <strong>Airbnb</strong>. Rispondo in tempi brevissimi e vi dico dove trovarmi.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">ii.</div>
+      <div>
+        <div class="step-title" data-i18n="arr2_title">Raggiungete Piazza Trinità</div>
+        <div class="step-desc" data-i18n="arr2_desc">Se arrivate <strong>in treno</strong>, la stazione di Polignano è a 10 minuti a piedi. Se in <strong>auto</strong>, potreste trovare parcheggio anche a <strong>20 metri dall'alloggio</strong> (parcheggio pubblico, non prenotabile, ma posti se ne trovano). Da lì, due passi e siete in piazza.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">iii.</div>
+      <div>
+        <div class="step-title" data-i18n="arr3_title">Vi aspetto sulla porta</div>
+        <div class="step-desc" data-i18n="arr3_desc">Vi do appuntamento davanti all'ingresso della casa, in <strong>Piazza Trinità 16</strong>. Vi consegno il <strong>badge</strong> e vi illustro l'interno della casa.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">iv.</div>
+      <div>
+        <div class="step-title" data-i18n="arr4_title">Tour della casa</div>
+        <div class="step-desc" data-i18n="arr4_desc">Cinque minuti per mostrarvi tutto: il funzionamento del badge, il bagno, l'aria condizionata. E vi consegno una <strong>mappa di Polignano</strong> con i miei consigli — i ristoranti che vi consiglio, le calette più belle, dove prendere il panino al polpo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="notices">
+  <div class="section-tag" data-i18n="tag_practical">Da sapere</div>
+  <h2 class="section-title" data-i18n="notices_title">Note <em>pratiche</em></h2>
+  <p class="section-intro" data-i18n="notices_intro">Tre dettagli da sapere prima dell'arrivo. Vi semplificano il soggiorno.</p>
+  <div class="observe-fade">
+    <div class="notice">
+      <div class="notice-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span data-i18n="notice1_label">Parcheggio</span>
+      </div>
+      <div class="notice-title" data-i18n="notice1_title">Parcheggio pubblico gratuito</div>
+      <div class="notice-desc" data-i18n="notice1_desc">In zona ci sono <strong>parcheggi pubblici gratuiti</strong>, non prenotabili. In alta stagione (luglio/agosto) può essere difficile trovare posto in centro: vi consiglio di lasciare l'auto al <strong>parcheggio di Largo Ardito</strong> e fare 5 minuti a piedi. Per qualsiasi dubbio, chiedetemi.</div>
+    </div>
+    <div class="notice">
+      <div class="notice-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        <span data-i18n="notice2_label">No animali</span>
+      </div>
+      <div class="notice-title" data-i18n="notice2_title">Animali non ammessi</div>
+      <div class="notice-desc" data-i18n="notice2_desc">Per il rispetto degli ospiti successivi e per la natura della casa, <strong>non sono ammessi animali domestici</strong>. Mi dispiace per chi viaggia con un amico a quattro zampe — ma capirete che la casa è piccola e va preservata.</div>
+    </div>
+    <div class="notice">
+      <div class="notice-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        <span data-i18n="notice3_label">Non si fuma</span>
+      </div>
+      <div class="notice-title" data-i18n="notice3_title">Vietato fumare in casa</div>
+      <div class="notice-desc" data-i18n="notice3_desc">Vi chiedo di <strong>non fumare all'interno</strong>. Polignano è una città piena di vicoli e piazzette — uscire all'aperto per una sigaretta è anche un'occasione per godersi il centro storico la sera.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="comfort">
+  <div class="section-tag" data-i18n="tag_inroom">In casa</div>
+  <h2 class="section-title" data-i18n="comfort_title">La <em>vostra</em> casa</h2>
+  <p class="section-intro" data-i18n="comfort_intro">Tutto quello che serve, spiegato in due righe.</p>
+  <div class="observe-fade">
+
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <div class="accordion-header-left">
+          <div class="acc-num">i.</div>
+          <div>
+            <div class="acc-title" data-i18n="acc_coffee_title">Il caffè e la colazione</div>
+            <div class="acc-sub" data-i18n="acc_coffee_sub">Bollitore · tè e caffè di benvenuto</div>
+          </div>
+        </div>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-body"><div class="accordion-body-inner"><ul>
+        <li data-i18n="coffee1">Trovate <strong>bustine di caffè e tè</strong> di benvenuto sul piano cottura.</li>
+        <li data-i18n="coffee2">Il <strong>bollitore</strong> è pronto all'uso: riempitelo con acqua del rubinetto.</li>
+        <li data-i18n="coffee3">Tazze, tazzine e cucchiaini nei pensili sopra il lavello.</li>
+        <li data-i18n="coffee4">Per una <strong>colazione vera</strong>, vi consiglio il bar qui in Piazza Trinità: cornetti caldi e cappuccino come piace ai pugliesi.</li>
+        <li data-i18n="coffee5">Per il classico <em>pasticciotto</em> leccese, qualsiasi pasticceria del centro storico — vale ogni caloria.</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <div class="accordion-header-left">
+          <div class="acc-num">ii.</div>
+          <div>
+            <div class="acc-title" data-i18n="acc_climate_title">Aria condizionata</div>
+            <div class="acc-sub" data-i18n="acc_climate_sub">Caldo / freddo, autonomo</div>
+          </div>
+        </div>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-body"><div class="accordion-body-inner"><ul>
+        <li data-i18n="clim1">Il <strong>telecomando</strong> dell'aria è sul tavolo o sul comodino.</li>
+        <li data-i18n="clim2">In estate (luglio/agosto fa <em>caldo</em>): tasto <strong>COOL</strong>, temperatura 24°–26°.</li>
+        <li data-i18n="clim3">In inverno: tasto <strong>HEAT</strong>, temperatura intorno ai 22°.</li>
+        <li data-i18n="clim4">Le <strong>mura sono spesse e insonorizzate</strong> — tengono fresco d'estate e silenzio dentro casa. Sfruttatele.</li>
+        <li data-i18n="clim5">Quando uscite, vi basta <strong>togliere il badge dall'apposito alloggiamento</strong>: si spegne tutto da solo, comprese luci e aria condizionata. Niente di cui preoccuparsi.</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <div class="accordion-header-left">
+          <div class="acc-num">iii.</div>
+          <div>
+            <div class="acc-title" data-i18n="acc_kitchen_title">Angolo cottura</div>
+            <div class="acc-sub" data-i18n="acc_kitchen_sub">Frigorifero, fornelli, stoviglie</div>
+          </div>
+        </div>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-body"><div class="accordion-body-inner"><ul>
+        <li data-i18n="kit1">L'angolo cottura ha <strong>fornelli, frigorifero e bollitore</strong>: perfetto per colazioni e cene leggere.</li>
+        <li data-i18n="kit2">Stoviglie, piatti, bicchieri e posate nei pensili. Pentolini base sotto il lavello.</li>
+        <li data-i18n="kit3">Per <strong>cucinare pasti completi</strong> lo spazio è limitato — Polignano però è la città del cibo: approfittatene!</li>
+        <li data-i18n="kit4">Per lo <em>street food</em>, fate un giro su <strong>Via Roma</strong> — è la via dello street food di Polignano, troverete di tutto, dal panino al polpo ai panzerotti.</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <div class="accordion-header-left">
+          <div class="acc-num">iv.</div>
+          <div>
+            <div class="acc-title" data-i18n="acc_safety_title">Bagno & comfort</div>
+            <div class="acc-sub" data-i18n="acc_safety_sub">Accappatoi, set di cortesia, asciugacapelli</div>
+          </div>
+        </div>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-body"><div class="accordion-body-inner"><ul>
+        <li data-i18n="saf1">In bagno trovate <strong>accappatoi morbidi</strong> personali e un <strong>set di cortesia</strong> completo (saponi, bagnoschiuma, shampoo) — usateli senza pensieri.</li>
+        <li data-i18n="saf2"><strong>Asciugacapelli</strong> sotto il lavandino.</li>
+        <li data-i18n="saf3"><strong>Asciugamani da mare</strong> non sono inclusi — portate i vostri, oppure ditemi e vi indico dove comprarli.</li>
+        <li data-i18n="saf4">Per <strong>emergenze</strong> trovate i numeri utili nell'ultima pagina della guida.</li>
+      </ul></div></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="bookshelf">
+  <div class="bookshelf observe-fade">
+    <div class="bookshelf-tag" data-i18n="bookshelf_tag">Da Maria</div>
+    <h2 class="bookshelf-title" data-i18n="bookshelf_title">La mappa di <em>Polignano</em></h2>
+    <p class="bookshelf-desc" data-i18n="bookshelf_desc">Quando arrivate, oltre al badge vi consegno una <strong>mappa di Polignano</strong> con i miei consigli. E una raccomandazione speciale: provate il <strong>Caffè Speciale</strong>, l'iconica bevanda inventata proprio qui a Polignano nel 1965 da Mario Campanella — caffè, scorza di limone, panna e amaretto, servito tiepido in piccoli bicchieri di vetro. Lo trovate originale al <strong>Super Mago del Gelo</strong>, in <strong>Piazza Garibaldi 22</strong>, dove veniva anche Domenico Modugno. Una tappa che non potete saltare.</p>
+    <div class="bookshelf-quote" data-i18n="bookshelf_quote">«Polignano si vive piano, con il sale sulla pelle.»</div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-tag" data-i18n="tag_services">A vostra disposizione</div>
+  <h2 class="section-title" data-i18n="services_title">Tutti i <em>servizi</em></h2>
+  <p class="section-intro" data-i18n="services_intro">Tutto incluso nel soggiorno. Una chicca con tutto il necessario.</p>
+  <div class="services-grid observe-fade">
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.5a11 11 0 0114 0"/><path d="M1.5 9a16 16 0 0121 0"/><path d="M8.5 16a6 6 0 017 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div>
+      <div class="service-name" data-i18n="svc_wifi">Wi-Fi gratuito</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+      <div class="service-name" data-i18n="svc_seaview">Vista mare e città</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6M5 8l7 4 7-4M5 8v8l7 4 7-4V8"/></svg></div>
+      <div class="service-name" data-i18n="svc_ac">Aria condizionata</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="13" rx="1"/><path d="M2 10h20M6 19v2M18 19v2"/></svg></div>
+      <div class="service-name" data-i18n="svc_tv">TV schermo piatto</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14l-1 11H6z"/><path d="M9 9V5a3 3 0 016 0v4"/></svg></div>
+      <div class="service-name" data-i18n="svc_kitchen">Angolo cottura</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4M10 12h4"/></svg></div>
+      <div class="service-name" data-i18n="svc_fridge">Frigorifero</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2v6c0 2 1 3 3 3h6c2 0 3-1 3-3V2M6 22h12"/><path d="M9 11v11M15 11v11"/></svg></div>
+      <div class="service-name" data-i18n="svc_kettle">Bollitore</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+      <div class="service-name" data-i18n="svc_dryer">Asciugacapelli</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
+      <div class="service-name" data-i18n="svc_historic">Piano terra · 2 ingressi</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></div>
+      <div class="service-name" data-i18n="svc_amenities">Set di cortesia</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+      <div class="service-name" data-i18n="svc_robes">Accappatoi & set cortesia</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="food">
+  <div class="section-tag" data-i18n="tag_food">A tavola</div>
+  <h2 class="section-title" data-i18n="food_title">I posti che <em>vi consiglio</em></h2>
+  <p class="section-intro" data-i18n="food_intro">Selezione personale dei posti che frequento davvero. Tap per le indicazioni su Google Maps.</p>
+  <div class="places observe-fade">
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Antica+Trattoria+Comes+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V9l9-6 9 6v12M9 21v-8h6v8M3 21h18"/></svg>
+        <div class="place-img-ph-label">Antica Trattoria Comes</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_traditional">Cucina tipica · Consigliatissimo</div>
+        <div class="place-title">Antica Trattoria <em>Comes</em></div>
+        <div class="place-desc" data-i18n="comes_desc"><strong>Il mio preferito per la cucina tipica.</strong> Cucina della tradizione pugliese fatta come si deve. Atmosfera familiare, porzioni generose, rapporto qualità-prezzo onesto. Se cercate il sapore vero di Polignano, andate qui.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>5 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Pizzeria+Il+Buco+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="14" cy="13" r="1" fill="currentColor"/><circle cx="11" cy="15" r="1" fill="currentColor"/></svg>
+        <div class="place-img-ph-label">Pizzeria Il Buco</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_pizza">Pizzeria · Il mio preferito</div>
+        <div class="place-title">Pizzeria <em>Il Buco</em></div>
+        <div class="place-desc" data-i18n="ilbuco_desc"><strong>La mia pizzeria preferita di Polignano.</strong> Pizza ben lievitata, ingredienti freschi, posto autentico senza fronzoli. Andate per una serata informale dopo una giornata al mare. Spesso pieno la sera, meglio prenotare.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>5 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Modus+Largo+Gelso+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"/><path d="M12 12v10M4 7l8 5 8-5"/></svg>
+        <div class="place-img-ph-label">Modus</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_finedining">Largo Gelso · Medio-alto</div>
+        <div class="place-title">Mo<em>dus</em></div>
+        <div class="place-desc" data-i18n="modus_desc">Uno dei <strong>tre bei ristoranti in Largo Gelso</strong>. Cucina ricercata, ambiente curato, fascia medio-alta. Ottimo per una cena importante. Atmosfera ricercata ma rilassata. Prenotate.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>4 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Chichibio+Largo+Gelso+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c4-4 8-4 12 0s8 4 8 0M2 12c4 4 8 4 12 0s8-4 8 0"/></svg>
+        <div class="place-img-ph-label">Chichibio</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_finedining2">Largo Gelso · Pesce</div>
+        <div class="place-title">Chichi<em>bio</em></div>
+        <div class="place-desc" data-i18n="chichibio_desc">Sempre in <strong>Largo Gelso</strong>. Tra i tre più belli della zona. Pesce e cucina di mare di qualità, presentazione curata. Fascia medio-alta. Ottimo per un'occasione speciale a piedi da casa.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>4 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Meraviglioso+Largo+Gelso+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.5 7.5H22l-6 4.5 2 7-6-4.5L6 21l2-7-6-4.5h7.5z"/></svg>
+        <div class="place-img-ph-label">Meraviglioso</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_finedining3">Largo Gelso · Ottimo</div>
+        <div class="place-title">Mera<em>viglioso</em></div>
+        <div class="place-desc" data-i18n="meraviglioso_desc">Il terzo dei <strong>tre bei ristoranti di Largo Gelso</strong>. Nome che è già una promessa: cucina ottima, atmosfera curata. Fascia medio-alta come gli altri, ma vale ogni centesimo. Prenotate il fine settimana.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>4 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Via+Roma+Polignano+a+Mare+street+food" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M5 8h14M5 16h14M7 4h10M7 20h10"/></svg>
+        <div class="place-img-ph-label">Via Roma · Street food</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_streetfood">Street food · Via Roma</div>
+        <div class="place-title">Via <em>Roma</em></div>
+        <div class="place-desc" data-i18n="viaroma_desc">La via dello <strong>street food di Polignano</strong>. Camminate lungo Via Roma e trovate di tutto: panini al polpo, panzerotti, focacce, frittini, taralli. Perfetto per una cena rilassata senza prenotare, mangiando passeggiando.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>3 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Super+Mago+del+Gelo+Polignano" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 22l4-12 4 12M6 10h12M9 6c0-2 1-3 3-3s3 1 3 3"/></svg>
+        <div class="place-img-ph-label">Super Mago del Gelo</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_gelato">Caffè Speciale · Storico</div>
+        <div class="place-title">Il Super <em>Mago del Gelo</em></div>
+        <div class="place-desc" data-i18n="supermago_desc"><strong>Tappa obbligatoria.</strong> Qui nel 1965 è nato il <em>Caffè Speciale di Polignano</em>: caffè, scorza di limone, panna e amaretto, servito tiepido in bicchierini di vetro. Locale storico di Piazza Garibaldi 22, frequentato anche da Domenico Modugno. Provatelo nel pomeriggio — è il rito di Polignano.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>4 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Martinucci+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l-2 8a4 4 0 008 0l-2-8M14 4l-2 8a4 4 0 008 0l-2-8M5 20h14"/></svg>
+        <div class="place-img-ph-label">Martinucci</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_pasticciotto">Dolci · Pasticciotto</div>
+        <div class="place-title">Marti<em>nucci</em></div>
+        <div class="place-desc" data-i18n="martinucci_desc">Per il <strong>pasticciotto famoso</strong>: il dolce simbolo del Salento, pasta frolla con crema, da mangiare caldo. Da Martinucci è una garanzia. Una tappa per la colazione o per il pomeriggio.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>4 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="colazione">
+  <div class="section-tag" data-i18n="tag_breakfast">La colazione & dintorni</div>
+  <h2 class="section-title" data-i18n="breakfast_title">Per la <em>colazione</em></h2>
+  <p class="section-intro" data-i18n="breakfast_intro">In casa lascio per voi <strong>cialde caffè, bustine di tè, zucchero e brioche confezionate</strong>. Per il resto, a pochi metri trovate tutto quello che vi serve.</p>
+  <div class="places observe-fade">
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Bar+Nal%C3%B9+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h12v6a4 4 0 01-4 4H8a4 4 0 01-4-4V8zM16 10h2a2 2 0 010 4h-2M6 2l1 2M10 2l1 2M14 2l1 2"/></svg>
+        <div class="place-img-ph-label">Bar Nalù</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_coffee">Bar · 20 metri da casa</div>
+        <div class="place-title">Bar <em>Nalù</em></div>
+        <div class="place-desc" data-i18n="nalu_desc"><strong>A 20 metri dall'alloggio.</strong> Perfetto per il caffè del mattino se non vi va di prepararvelo, o per una pausa pomeridiana. Veloce, buono, vicinissimo.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>20 metri</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=La+Botteguccia+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l1.5-5h15L21 9M3 9h18v11H3zM9 13h6"/></svg>
+        <div class="place-img-ph-label">La Botteguccia</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_local">Prodotti tipici · A pochi passi</div>
+        <div class="place-title">La <em>Botteguccia</em></div>
+        <div class="place-desc" data-i18n="botteguccia_desc">A pochi metri da casa, per i <strong>prodotti tipici pugliesi</strong>: taralli, conserve, olio, formaggi, sott'oli. Perfetto per portarvi a casa un pezzo di Puglia.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>pochi metri</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Antico+Forno+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M3 10h18"/></svg>
+        <div class="place-img-ph-label">Antico Forno</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_bakery">Forno · A pochi passi</div>
+        <div class="place-title">Antico <em>Forno</em></div>
+        <div class="place-desc" data-i18n="forno_desc">Anche questo a pochi metri. <strong>Pane caldo, focacce, panzerotti, taralli</strong> appena sfornati. La mattina presto è un'esperienza solo l'odore. Perfetto da abbinare al caffè di Nalù.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>pochi metri</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Il+Pizzicagnolo+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 4v16"/></svg>
+        <div class="place-img-ph-label">Il Pizzicagnolo</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_market">Supermercato · 100 metri</div>
+        <div class="place-title">Il <em>Pizzicagnolo</em></div>
+        <div class="place-desc" data-i18n="pizzicagnolo_desc">A <strong>100 metri</strong> da casa, il supermercato per la spesa essenziale: acqua, frutta, prodotti freschi e tutto quello che vi serve durante il soggiorno.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>100 metri</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="around">
+  <div class="section-tag" data-i18n="tag_around">Nei dintorni</div>
+  <h2 class="section-title" data-i18n="around_title">A piedi & in <em>auto</em></h2>
+  <p class="section-intro" data-i18n="around_intro">Polignano è un gioiello che si scopre piano. Ma intorno c'è altra Puglia bella da scoprire: trulli, masserie, mare cristallino.</p>
+  <div class="places observe-fade">
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Lama+Monachile+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18c2-3 5-3 7 0c2-3 5-3 7 0c2-3 5-3 7 0M2 22h20M3 14l9-9 9 9"/></svg>
+        <div class="place-img-ph-label">Lama Monachile</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_iconic">Icona di Polignano · Caletta</div>
+        <div class="place-title">Lama <em>Monachile</em></div>
+        <div class="place-desc" data-i18n="lama_desc">La caletta più famosa d'Italia, quella delle cartoline. <strong>Andateci la mattina presto (prima delle 9)</strong> o al tramonto: in alta stagione di giorno è impossibile. Salite anche sul <strong>Ponte Borbonico</strong> sopra di lei per il panorama. È a 500 metri da casa.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>7 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Statua+Domenico+Modugno+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="3"/><path d="M9 11h6l1 11H8z M3 22l5-3M21 22l-5-3"/></svg>
+        <div class="place-img-ph-label">Statua di Modugno</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_modugno">Simbolo · "Volare"</div>
+        <div class="place-title">Statua di <em>Domenico Modugno</em></div>
+        <div class="place-desc" data-i18n="modugno_desc">Polignano è la <strong>città di "Volare"</strong>: Domenico Modugno è nato qui. La statua sul lungomare, con le braccia spalancate verso il mare, è il simbolo della città. Andateci al tramonto — la vista sulla scogliera vale la passeggiata.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>5 min a piedi</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Centro+Storico+Polignano+a+Mare" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 22V8l5-3v17M8 22V5l5 2v15M13 22V7l5 3v12M3 22h18"/></svg>
+        <div class="place-img-ph-label">Centro Storico</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_historic">Centro storico · A piedi</div>
+        <div class="place-title">Vicoli del <em>centro storico</em></div>
+        <div class="place-desc" data-i18n="centro_desc">Voi siete <strong>già dentro</strong>. Perdetevi tra i vicoli bianchi, i balconi sul mare, l'<strong>Arco Marchesale</strong>, la Chiesa Madre, la <strong>Casa dell'Orologio</strong>. Cercate i <em>"balconi sul mare"</em>: piccole terrazze a strapiombo che sono il simbolo di Polignano.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>0 min · siete qui</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Grotte+Polignano+a+Mare+gita+barca" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s4-8 10-8 10 8 10 8M2 18c2-3 4-3 6 0c2-3 4-3 6 0c2-3 4-3 6 0"/></svg>
+        <div class="place-img-ph-label">Grotte di Polignano</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_caves">Mare · Esperienza</div>
+        <div class="place-title">Le <em>grotte</em> in barca</div>
+        <div class="place-desc" data-i18n="grotte_desc">Da non perdere: il <strong>giro in barca delle grotte marine</strong>. Si parte dal porticciolo di Cala Porto, dura circa 1 ora, costa 15-20€ a persona. Vedrete la <strong>Grotta Palazzese</strong>, la <strong>Grotta Azzurra</strong>, la <strong>Grotta delle Rondinelle</strong>. Prenotate al mattino, il mare è più calmo.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>7 min a piedi al porto</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Alberobello+trulli" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 18h4l-2-8zM12 18h4l-2-8zM19 18h4l-2-8zM3 22h22"/></svg>
+        <div class="place-img-ph-label">Alberobello</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_trulli">UNESCO · Trulli</div>
+        <div class="place-title">Alberobello & i <em>trulli</em></div>
+        <div class="place-desc" data-i18n="alberobello_desc">A <strong>30 minuti d'auto</strong>: la città dei trulli, patrimonio UNESCO. Andateci per la giornata: visitate il rione Monti, il Trullo Sovrano, mangiate in una masseria. Se non avete l'auto, ci sono escursioni organizzate che partono da Polignano.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>30 min in auto</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=Monopoli+centro+storico+Puglia" target="_blank" rel="noopener">
+      <div class="place-img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8l9-5 9 5v13M9 21v-8h6v8M3 21h18"/></svg>
+        <div class="place-img-ph-label">Monopoli</div>
+      </div>
+      <div class="place-body">
+        <div class="place-kicker" data-i18n="kick_monopoli">Borgo · Sera & vita</div>
+        <div class="place-title">Monopoli <em>la sera</em></div>
+        <div class="place-desc" data-i18n="monopoli_desc">A <strong>15 minuti d'auto</strong>: borgo bianco con porto antico e centro storico vivace. La sera ha più <em>movida</em> di Polignano — bar, ristoranti, locali aperti fino a tardi. Per chi cerca un po' di vita notturna.</div>
+        <div class="place-meta">
+          <span class="place-distance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>15 min in auto</span>
+          <span class="place-cta" data-i18n="open_maps">Apri in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="sapori">
+  <div class="section-tag" data-i18n="tag_flavors">I sapori di Puglia</div>
+  <h2 class="section-title" data-i18n="flavors_title">Cose da <em>provare</em></h2>
+  <p class="section-intro" data-i18n="flavors_intro">I sapori che non potete tornare a casa senza aver assaggiato. La Puglia in nove bocconi.</p>
+  <ul class="sapori-list observe-fade">
+    <li class="sapori-item">
+      <div class="sapori-num">i.</div>
+      <div>
+        <div class="sapori-name"><em>Riso, patate e cozze</em></div>
+        <div class="sapori-desc" data-i18n="sap_riso">Il piatto tipico per eccellenza di Polignano e di Bari. Strati di riso, patate e cozze cotti in forno con pomodorini, aglio, prezzemolo, pecorino. Da gustare sulla scogliera di Lama Monachile — un'esperienza che racconta la Puglia in un piatto.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">ii.</div>
+      <div>
+        <div class="sapori-name"><em>Panino al polpo</em></div>
+        <div class="sapori-desc" data-i18n="sap1">Il simbolo street food di Polignano. Polpo cotto a bassa temperatura, focaccia croccante, salse fatte in casa. Lo trovate su <strong>Via Roma</strong>, la via dello street food di Polignano. Si mangia in piedi, sul lungomare, guardando il mare.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">iii.</div>
+      <div>
+        <div class="sapori-name"><em>Orecchiette</em> alle cime di rapa</div>
+        <div class="sapori-desc" data-i18n="sap2">Il piatto-bandiera della Puglia. Pasta fatta a mano, cime di rapa amarognole, acciughe, peperoncino, mollica fritta. La trovate in ogni trattoria — sceglietene una con le signore che fanno le orecchiette davanti al locale. All'Antica Trattoria Comes le fanno benissimo.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">iv.</div>
+      <div>
+        <div class="sapori-name"><em>Carota</em> di Polignano</div>
+        <div class="sapori-desc" data-i18n="sap3">Presidio Slow Food. Una carota viola-gialla, dolcissima, coltivata solo qui sulla sabbia. Ne fanno marmellate, gelati, cocktail. Cercate i prodotti tipici nelle botteghe del centro, tipo La Botteguccia a pochi passi da casa.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">v.</div>
+      <div>
+        <div class="sapori-name"><em>Crudo</em> di mare</div>
+        <div class="sapori-desc" data-i18n="sap4">Gamberi rossi di Gallipoli, ricci di mare, allievi, cozze pelose, ostriche di Taranto. Il pesce qui si mangia <strong>crudo</strong>, con un filo d'olio e limone. Da provare assolutamente nei ristoranti di Largo Gelso (Modus, Chichibio, Meraviglioso).</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">vi.</div>
+      <div>
+        <div class="sapori-name"><em>Focaccia</em> barese</div>
+        <div class="sapori-desc" data-i18n="sap5">Alta, soffice, con pomodorini schiacciati, olive, sale grosso, olio extra-vergine. Si mangia calda, a colazione o a merenda. <strong>All'Antico Forno</strong> a pochi metri da casa è una garanzia.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">vii.</div>
+      <div>
+        <div class="sapori-name"><em>Pasticciotto</em></div>
+        <div class="sapori-desc" data-i18n="sap6">La pasta frolla salentina con crema pasticcera dentro, calda al mattino. Polignano è in provincia di Bari, ma il pasticciotto è una colazione comune anche qui. Il famoso pasticciotto lo trovate <strong>da Martinucci</strong>.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">viii.</div>
+      <div>
+        <div class="sapori-name"><em>Caffè Speciale</em> di Polignano</div>
+        <div class="sapori-desc" data-i18n="sap7">L'iconica bevanda inventata nel 1965 da Mario Campanella al <strong>Super Mago del Gelo</strong> (Piazza Garibaldi 22): caffè, scorza di limone, panna e amaretto, servito tiepido in piccoli bicchieri di vetro. Una tradizione di Polignano che esiste solo qui. Tappa obbligata.</div>
+      </div>
+    </li>
+    <li class="sapori-item">
+      <div class="sapori-num">ix.</div>
+      <div>
+        <div class="sapori-name"><em>Primitivo</em> di Manduria</div>
+        <div class="sapori-desc" data-i18n="sap8">Vino rosso pugliese, intenso, fruttato, con gradazione alta. Si abbina a tutto: dal pesce ai primi al ragù di carne. Cercate produttori locali nelle enoteche del centro — un buon Primitivo si trova dai 12€.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="section" id="contacts">
+  <div class="section-tag" data-i18n="tag_contacts">Contatti</div>
+  <h2 class="section-title" data-i18n="contacts_title">Numeri <em>utili</em></h2>
+  <p class="section-intro" data-i18n="contacts_intro">Per averli a portata di mano, in caso servano.</p>
+  <div class="emergency-grid observe-fade">
+    <div class="emergency-card">
+      <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="emergency-body">
+        <div class="emergency-label" data-i18n="emerg_112">Emergenze</div>
+        <div class="emergency-value">112</div>
+      </div>
+    </div>
+    <div class="emergency-card">
+      <a href="mailto:leninfedelmare1618@gmail.com" style="display:contents; color:inherit; text-decoration:none;">
+        <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="emergency-body">
+          <div class="emergency-label" data-i18n="emerg_maria">Maria · La vostra host</div>
+          <div class="emergency-value" style="font-size:0.9em; word-break:break-all;">leninfedelmare1618@gmail.com</div>
+        </div>
+      </a>
+    </div>
+    <div class="emergency-card">
+      <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Trinit%C3%A0+16+Polignano+a+Mare" target="_blank" rel="noopener" style="display:contents; color:inherit; text-decoration:none;">
+        <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="emergency-body">
+          <div class="emergency-label" data-i18n="emerg_address">Indirizzo</div>
+          <div class="emergency-value">Piazza Trinità, 16</div>
+        </div>
+      </a>
+    </div>
+    <div class="emergency-card">
+      <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="emergency-body">
+        <div class="emergency-label" data-i18n="emerg_pharmacy">Farmacia di turno</div>
+        <div class="emergency-value" data-i18n="emerg_pharmacy_val">Cerca su Google Maps</div>
+      </div>
+    </div>
+    <div class="emergency-card">
+      <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+      <div class="emergency-body">
+        <div class="emergency-label" data-i18n="emerg_station">Stazione FS Polignano</div>
+        <div class="emergency-value" data-i18n="emerg_station_val">10 min a piedi</div>
+      </div>
+    </div>
+    <div class="emergency-card">
+      <div class="emergency-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22V8l10-6 10 6v14M9 22v-9h6v9"/></svg></div>
+      <div class="emergency-body">
+        <div class="emergency-label" data-i18n="emerg_hospital">Ospedale San Giacomo</div>
+        <div class="emergency-value" data-i18n="emerg_hospital_val">Monopoli · 15 min</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-mark">Le Ninfe del Mare</div>
+  <div class="footer-tag" data-i18n="footer_tag">An Apulian Retreat</div>
+  <div class="footer-quote" data-i18n="footer_quote">«Vi accolgo personalmente in una chicca nel cuore di Polignano. Godetevela, e tornate a trovarmi.»</div>
+  <div class="footer-sign">Maria</div>
+  <div class="footer-luna" data-i18n="footer_luna">Polignano a Mare · Puglia</div>
+  <div class="footer-divider"></div>
+  <div class="footer-powered">Powered by <strong>GuestGuide</strong></div>
+</footer>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<div class="powered-bar">
+  Powered by <strong>GuestGuide</strong> · Your stay, simplified
+</div>
+
+<script>
+const translations = {
+  it: {
+    masthead_left: "Polignano a Mare · Puglia",
+    masthead_right: "No. 01 · Edizione Ospite",
+    hero_issue: "La Vostra Guida",
+    hero_greet: "benvenuti a",
+    hero_stamp: "★ 9,7 / 10 · Posizione",
+    hero_byline: "«Una chicca nel cuore di Polignano, a quattro passi dal mare»",
+    spec_guests: "Ospiti",
+    spec_room: "Camere",
+    spec_baths: "Bagni",
+    spec_beach: "Ingressi",
+    copy: "Copia",
+    copied: "✓ Copiato",
+    tag_letter: "Lettera della host",
+    letter_title: "Un saluto da <em>Maria</em>",
+    letter_p1: "envenuti a Le Ninfe del Mare. Sono Maria, e mi occupo personalmente di ogni ospite che arriva nella mia casa. Ci tengo che vi sentiate a casa, fin dal primo momento.",
+    letter_p2: "Vi consegno il badge di una chicca nel cuore di Polignano: un alloggio al piano terra con due ingressi, due camere (eventualmente comunicanti), due bagni. Curato in ogni dettaglio, con tutto il necessario per il vostro soggiorno. Il mare è a pochi minuti, i ristoranti e i bar sono nelle vicinanze, e la magia di Lama Monachile vi aspetta dietro l'angolo.",
+    letter_p3: "Nelle prossime pagine trovate tutto: il Wi-Fi, come arrivare, i posti che vi consiglio per mangiare, le calette segrete e i sapori tipici da non perdere. Per qualsiasi cosa, sono qui — un messaggio o una telefonata e vi rispondo subito. Buon soggiorno!",
+    letter_role: "La vostra host",
+    letter_extra: "Polignano a Mare, Puglia",
+    tag_essentials: "Essenziali",
+    wifi_title: "Wi-Fi <em>gratuito</em>",
+    wifi_intro: "Connessione disponibile in tutto l'alloggio. Per restare in contatto con casa, per il lavoro, per la sera in relax dopo una giornata al mare.",
+    wifi_card_title: "Connettetevi senza pensieri",
+    wifi_network: "Nome rete",
+    wifi_password: "Password",
+    tag_arrival: "Il vostro arrivo",
+    arrival_title: "Come <em>arrivate</em>",
+    arrival_intro: "L'alloggio si trova in Piazza Trinità, nel cuore di Polignano. Vi accolgo personalmente: avvisatemi appena avete un'idea dell'orario.",
+    arr1_title: "Avvisatemi del vostro orario",
+    arr1_desc: "Quando avete un'idea di quando arrivate, scrivetemi su <strong>WhatsApp</strong>, su <strong>Booking</strong> o su <strong>Airbnb</strong>. Rispondo in tempi brevissimi e vi dico dove trovarmi.",
+    arr2_title: "Raggiungete Piazza Trinità",
+    arr2_desc: "Se arrivate <strong>in treno</strong>, la stazione di Polignano è a 10 minuti a piedi. Se in <strong>auto</strong>, potreste trovare parcheggio anche a <strong>20 metri dall'alloggio</strong> (parcheggio pubblico, non prenotabile, ma posti se ne trovano). Da lì, due passi e siete in piazza.",
+    arr3_title: "Vi aspetto sulla porta",
+    arr3_desc: "Vi do appuntamento davanti all'ingresso della casa, in <strong>Piazza Trinità 16</strong>. Vi consegno il <strong>badge</strong> e vi illustro l'interno della casa.",
+    arr4_title: "Tour della casa",
+    arr4_desc: "Cinque minuti per mostrarvi tutto: il funzionamento del badge, il bagno, l'aria condizionata. E vi consegno una <strong>mappa di Polignano</strong> con i miei consigli — i ristoranti che vi consiglio, le calette più belle, dove prendere il panino al polpo.",
+    tag_practical: "Da sapere",
+    notices_title: "Note <em>pratiche</em>",
+    notices_intro: "Tre dettagli da sapere prima dell'arrivo. Vi semplificano il soggiorno.",
+    notice1_label: "Parcheggio",
+    notice1_title: "Parcheggio pubblico gratuito",
+    notice1_desc: "In zona ci sono <strong>parcheggi pubblici gratuiti</strong>, non prenotabili. In alta stagione (luglio/agosto) può essere difficile trovare posto in centro: vi consiglio di lasciare l'auto al <strong>parcheggio di Largo Ardito</strong> e fare 5 minuti a piedi. Per qualsiasi dubbio, chiedetemi.",
+    notice2_label: "No animali",
+    notice2_title: "Animali non ammessi",
+    notice2_desc: "Per il rispetto degli ospiti successivi e per la natura della casa, <strong>non sono ammessi animali domestici</strong>. Mi dispiace per chi viaggia con un amico a quattro zampe — ma capirete che la casa è piccola e va preservata.",
+    notice3_label: "Non si fuma",
+    notice3_title: "Vietato fumare in casa",
+    notice3_desc: "Vi chiedo di <strong>non fumare all'interno</strong>. Polignano è una città piena di vicoli e piazzette — uscire all'aperto per una sigaretta è anche un'occasione per godersi il centro storico la sera.",
+    tag_inroom: "In casa",
+    comfort_title: "La <em>vostra</em> casa",
+    comfort_intro: "Tutto quello che serve, spiegato in due righe.",
+    acc_coffee_title: "Il caffè e la colazione",
+    acc_coffee_sub: "Bollitore · tè e caffè di benvenuto",
+    coffee1: "Trovate <strong>bustine di caffè e tè</strong> di benvenuto sul piano cottura.",
+    coffee2: "Il <strong>bollitore</strong> è pronto all'uso: riempitelo con acqua del rubinetto.",
+    coffee3: "Tazze, tazzine e cucchiaini nei pensili sopra il lavello.",
+    coffee4: "Per una <strong>colazione vera</strong>, vi consiglio il bar qui in Piazza Trinità: cornetti caldi e cappuccino come piace ai pugliesi.",
+    coffee5: "Per il classico <em>pasticciotto</em> leccese, qualsiasi pasticceria del centro storico — vale ogni caloria.",
+    acc_climate_title: "Aria condizionata",
+    acc_climate_sub: "Caldo / freddo, autonomo",
+    clim1: "Il <strong>telecomando</strong> dell'aria è sul tavolo o sul comodino.",
+    clim2: "In estate (luglio/agosto fa <em>caldo</em>): tasto <strong>COOL</strong>, temperatura 24°–26°.",
+    clim3: "In inverno: tasto <strong>HEAT</strong>, temperatura intorno ai 22°.",
+    clim4: "Le <strong>mura sono spesse e insonorizzate</strong> — tengono fresco d'estate e silenzio dentro casa. Sfruttatele.",
+    clim5: "Quando uscite, vi basta <strong>togliere il badge dall'apposito alloggiamento</strong>: si spegne tutto da solo, comprese luci e aria condizionata. Niente di cui preoccuparsi.",
+    acc_kitchen_title: "Angolo cottura",
+    acc_kitchen_sub: "Frigorifero, fornelli, stoviglie",
+    kit1: "L'angolo cottura ha <strong>fornelli, frigorifero e bollitore</strong>: perfetto per colazioni e cene leggere.",
+    kit2: "Stoviglie, piatti, bicchieri e posate nei pensili. Pentolini base sotto il lavello.",
+    kit3: "Per <strong>cucinare pasti completi</strong> lo spazio è limitato — Polignano però è la città del cibo: approfittatene!",
+    kit4: "Per lo <em>street food</em>, fate un giro su <strong>Via Roma</strong> — è la via dello street food di Polignano, troverete di tutto, dal panino al polpo ai panzerotti.",
+    acc_safety_title: "Bagno & comfort",
+    acc_safety_sub: "Accappatoi, set di cortesia, asciugacapelli",
+    saf1: "In bagno trovate <strong>accappatoi morbidi</strong> personali e un <strong>set di cortesia</strong> completo (saponi, bagnoschiuma, shampoo) — usateli senza pensieri.",
+    saf2: "<strong>Asciugacapelli</strong> sotto il lavandino.",
+    saf3: "<strong>Asciugamani da mare</strong> non sono inclusi — portate i vostri, oppure ditemi e vi indico dove comprarli.",
+    saf4: "Per <strong>emergenze</strong> trovate i numeri utili nell'ultima pagina della guida.",
+    bookshelf_tag: "Da Maria",
+    bookshelf_title: "La mia <em>mappa</em> per voi",
+    bookshelf_desc: "Quando arrivate, oltre al badge vi consegno una <strong>mappa di Polignano</strong> con i miei consigli. E una raccomandazione speciale: provate il <strong>Caffè Speciale</strong>, l'iconica bevanda inventata proprio qui a Polignano nel 1965 da Mario Campanella — caffè, scorza di limone, panna e amaretto, servito tiepido in piccoli bicchieri di vetro. Lo trovate originale al <strong>Super Mago del Gelo</strong>, in <strong>Piazza Garibaldi 22</strong>, dove veniva anche Domenico Modugno. Una tappa che non potete saltare.",
+    bookshelf_quote: "«Polignano si vive piano, con il sale sulla pelle.»",
+    tag_services: "A vostra disposizione",
+    services_title: "Tutti i <em>servizi</em>",
+    services_intro: "Tutto incluso nel soggiorno. Una chicca con tutto il necessario.",
+    svc_wifi: "Wi-Fi gratuito",
+    svc_seaview: "Vista mare e città",
+    svc_ac: "Aria condizionata",
+    svc_tv: "TV schermo piatto",
+    svc_kitchen: "Angolo cottura",
+    svc_fridge: "Frigorifero",
+    svc_kettle: "Bollitore",
+    svc_dryer: "Asciugacapelli",
+    svc_historic: "Piano terra · 2 ingressi",
+    svc_amenities: "Set di cortesia",
+    svc_robes: "Accappatoi & set cortesia",
+    tag_food: "A tavola",
+    food_title: "I posti che <em>vi consiglio</em>",
+    food_intro: "Selezione personale dei posti che frequento davvero. Tap per le indicazioni su Google Maps.",
+    kick_polpo: "Street food · Panino al polpo",
+    kick_traditional: "Centro storico · Pesce fresco",
+    kick_iconic_food: "Iconico · Cena nella grotta",
+    kick_gelato: "Storico · Caffè speciale",
+    kick_healthy: "Centro · Fresco & sano",
+    kick_seaview: "Vista mare · Cena importante",
+    pescaria_desc: "Il panino al polpo che ha fatto la storia. Nato qui a Polignano, ora c'è anche a Milano e Roma — ma l'originale è questo. Aspettatevi <strong>fila</strong> nei festivi (anche 20 metri), ma vale la pena. Da provare anche il fritto di paranza. A 3 minuti da casa.",
+    muramura_desc: "Nel cuore del centro storico, in un'atmosfera suggestiva tra le mura antiche. <strong>Pesce fresco</strong>, antipasti generosi, primi della tradizione pugliese — orecchiette con cime di rapa, troccoli ai ricci. Prenotate il fine settimana, è sempre pieno. A 4 minuti.",
+    grotta_desc: "Il ristorante <strong>dentro la grotta sul mare</strong>: una delle location più famose d'Italia. Onesti: si va più per la vista che per la cucina, e i prezzi sono <strong>importanti</strong> (preventivate 200€ a persona). Per un'occasione speciale, però, è un'esperienza che non si dimentica. Prenotate con largo anticipo.",
+    supermago_desc: "Una <strong>tappa obbligatoria</strong>. Famoso da decenni per granite, gelati e per <em>il caffè speciale</em> — una bevanda iconica della casa fatta con caffè, panna e ingredienti segreti. A pochi passi dalla statua di Domenico Modugno. Andateci nel pomeriggio, è il rito di Polignano.",
+    mint_desc: "Un piccolo gioiello nel centro storico di Polignano. Menu corto ma efficace, con la fusione tra Lin (brasiliana) e Fabrizio (trentino): piatti detox, hummus, quinoa, pesce alla griglia. <strong>Nessuna vista mozzafiato</strong>, ma cucina di qualità a prezzi onesti. Per una pausa pranzo leggera.",
+    tuccino_desc: "Da 50 anni un'<strong>istituzione del pesce</strong> a Polignano. Splendida terrazza vista mare, materie prime di altissima qualità, crudi di mare leggendari. È a 1 km verso Bari (in macchina o taxi). <strong>Costoso</strong>, ma per un'occasione speciale è la garanzia.",
+    open_maps: "Apri in Maps",
+    tag_around: "Nei dintorni",
+    around_title: "A piedi & in <em>auto</em>",
+    around_intro: "Polignano è un gioiello che si scopre piano. Ma intorno c'è altra Puglia bella da scoprire: trulli, masserie, mare cristallino.",
+    kick_iconic: "Icona di Polignano · Caletta",
+    kick_modugno: "Simbolo · 'Volare'",
+    kick_historic: "Centro storico · A piedi",
+    kick_caves: "Mare · Esperienza",
+    kick_trulli: "UNESCO · Trulli",
+    kick_monopoli: "Borgo · Sera & vita",
+    lama_desc: "La caletta più famosa d'Italia, quella delle cartoline. <strong>Andateci la mattina presto (prima delle 9)</strong> o al tramonto: in alta stagione di giorno è impossibile. Salite anche sul <strong>Ponte Borbonico</strong> sopra di lei per il panorama. È a 500 metri da casa.",
+    modugno_desc: "Polignano è la <strong>città di 'Volare'</strong>: Domenico Modugno è nato qui. La statua sul lungomare, con le braccia spalancate verso il mare, è il simbolo della città. Andateci al tramonto — la vista sulla scogliera vale la passeggiata.",
+    centro_desc: "Voi siete <strong>già dentro</strong>. Perdetevi tra i vicoli bianchi, i balconi sul mare, l'<strong>Arco Marchesale</strong>, la Chiesa Madre, la <strong>Casa dell'Orologio</strong>. Cercate i <em>'balconi sul mare'</em>: piccole terrazze a strapiombo che sono il simbolo di Polignano.",
+    grotte_desc: "Da non perdere: il <strong>giro in barca delle grotte marine</strong>. Si parte dal porticciolo di Cala Porto, dura circa 1 ora, costa 15-20€ a persona. Vedrete la <strong>Grotta Palazzese</strong>, la <strong>Grotta Azzurra</strong>, la <strong>Grotta delle Rondinelle</strong>. Prenotate al mattino, il mare è più calmo.",
+    alberobello_desc: "A <strong>30 minuti d'auto</strong>: la città dei trulli, patrimonio UNESCO. Andateci per la giornata: visitate il rione Monti, il Trullo Sovrano, mangiate in una masseria. Se non avete l'auto, ci sono escursioni organizzate che partono da Polignano.",
+    monopoli_desc: "A <strong>15 minuti d'auto</strong>: borgo bianco con porto antico e centro storico vivace. La sera ha più <em>movida</em> di Polignano — bar, ristoranti, locali aperti fino a tardi. Per chi cerca un po' di vita notturna.",
+    tag_flavors: "I sapori di Puglia",
+    flavors_title: "Cose da <em>provare</em>",
+    flavors_intro: "I sapori che non potete tornare a casa senza aver assaggiato. La Puglia in nove bocconi.",
+    sap1: "Il simbolo street food di Polignano. Polpo cotto a bassa temperatura, focaccia croccante, salse fatte in casa. Lo trovate su <strong>Via Roma</strong>, la via dello street food di Polignano. Si mangia in piedi, sul lungomare, guardando il mare.",
+    sap2: "Il piatto-bandiera della Puglia. Pasta fatta a mano, cime di rapa amarognole, acciughe, peperoncino, mollica fritta. La trovate in ogni trattoria — sceglietene una con le signore che fanno le orecchiette davanti al locale. All'Antica Trattoria Comes le fanno benissimo.",
+    sap3: "Presidio Slow Food. Una carota viola-gialla, dolcissima, coltivata solo qui sulla sabbia. Ne fanno marmellate, gelati, cocktail. Cercate i prodotti tipici nelle botteghe del centro, tipo La Botteguccia a pochi passi da casa.",
+    sap4: "Gamberi rossi di Gallipoli, ricci di mare, allievi, cozze pelose, ostriche di Taranto. Il pesce qui si mangia <strong>crudo</strong>, con un filo d'olio e limone. Da provare assolutamente nei ristoranti di Largo Gelso (Modus, Chichibio, Meraviglioso).",
+    sap5: "Alta, soffice, con pomodorini schiacciati, olive, sale grosso, olio extra-vergine. Si mangia calda, a colazione o a merenda. <strong>All'Antico Forno</strong> a pochi metri da casa è una garanzia.",
+    sap6: "La pasta frolla salentina con crema pasticcera dentro, calda al mattino. Polignano è in provincia di Bari, ma il pasticciotto è una colazione comune anche qui. Il famoso pasticciotto lo trovate <strong>da Martinucci</strong>.",
+    sap7: "L'iconica bevanda inventata nel 1965 da Mario Campanella al <strong>Super Mago del Gelo</strong> (Piazza Garibaldi 22): caffè, scorza di limone, panna e amaretto, servito tiepido in piccoli bicchieri di vetro. Una tradizione di Polignano che esiste solo qui. Tappa obbligata.",
+    sap8: "Vino rosso pugliese, intenso, fruttato, con gradazione alta. Si abbina a tutto: dal pesce ai primi al ragù di carne. Cercate produttori locali nelle enoteche del centro — un buon Primitivo si trova dai 12€.",
+    tag_contacts: "Contatti",
+    contacts_title: "Numeri <em>utili</em>",
+    contacts_intro: "Per averli a portata di mano, in caso servano.",
+    emerg_112: "Emergenze",
+    emerg_maria: "Maria · La vostra host",
+    emerg_address: "Indirizzo",
+    emerg_pharmacy: "Farmacia di turno",
+    emerg_pharmacy_val: "Cerca su Google Maps",
+    emerg_station: "Stazione FS Polignano",
+    emerg_station_val: "10 min a piedi",
+    emerg_hospital: "Ospedale San Giacomo",
+    emerg_hospital_val: "Monopoli · 15 min",
+    footer_tag: "An Apulian Retreat",
+    footer_quote: "«Vi accolgo personalmente in una chicca nel cuore di Polignano. Godetevela, e tornate a trovarmi.»",
+    footer_luna: "Polignano a Mare · Puglia"
+  }
+};
+
+let currentLang = 'it';
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active', btn.textContent.trim().toUpperCase() === lang.toUpperCase()));
+  if(translations[lang]){
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.dataset.i18n;
+      if(translations[lang][key]) el.innerHTML = translations[lang][key];
+    });
+    const copyBtn = document.querySelector('.copy-btn');
+    if(copyBtn && !copyBtn.classList.contains('copied')) copyBtn.textContent = translations[lang].copy;
+  }
+}
+
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', ()=>{
+  const t = window.scrollY;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = (t/h)*100 + '%';
+});
+
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', ()=>backToTop.classList.toggle('visible', window.scrollY>800));
+
+function copyWifi(btn){
+  const pw = document.getElementById('wifi-pw').textContent;
+  const setCopied = ()=>{
+    btn.textContent = (translations[currentLang] && translations[currentLang].copied) || '✓ Copiato';
+    btn.classList.add('copied');
+    setTimeout(()=>{
+      btn.textContent = (translations[currentLang] && translations[currentLang].copy) || 'Copia';
+      btn.classList.remove('copied');
+    }, 2000);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(pw).then(setCopied).catch(fallback);
+  } else { fallback(); }
+  function fallback(){
+    const ta = document.createElement('textarea');
+    ta.value = pw; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta); setCopied();
+  }
+}
+
+function toggleAcc(header){
+  const item = header.parentElement;
+  const body = item.querySelector('.accordion-body');
+  const inner = body.querySelector('.accordion-body-inner');
+  if(item.classList.contains('open')){
+    body.style.maxHeight = '0';
+    item.classList.remove('open');
+  } else {
+    document.querySelectorAll('.accordion-item.open').forEach(o=>{
+      o.querySelector('.accordion-body').style.maxHeight = '0';
+      o.classList.remove('open');
+    });
+    body.style.maxHeight = inner.scrollHeight + 'px';
+    item.classList.add('open');
+  }
+}
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.observe-fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
